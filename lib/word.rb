@@ -1,9 +1,10 @@
 class Word
   attr_reader(:is, :definitions)
 
+  @@words = []
+
   define_method(:initialize) do |attributes|
       @is = attributes.fetch(:word)
-      @@words = []
       @definitions = []
   end
 
@@ -27,6 +28,10 @@ class Word
       end
     end
     return nil
+  end
+
+  define_singleton_method(:clear) do
+
   end
 
 end

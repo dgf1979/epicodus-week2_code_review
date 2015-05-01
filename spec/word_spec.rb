@@ -1,6 +1,7 @@
 require("rspec")
 require('word')
 require('definition')
+require('pry')
 
 describe(Word) do
 
@@ -10,11 +11,29 @@ describe(Word) do
     end
   end
 
-  describe('#save, #all') do
+  describe('#save, .all') do
     it("saves the current word to and internal list, and returns that list") do
       word = Word.new({:word => "word"})
       word.save()
       expect(Word.all()).to(eq([word]))
+    end
+
+    # it("prevents saving a word that already exists in the saved word list (case insensitive)") do
+    #   word = Word.new({:word => "word"})
+    #   word.save()
+    #   same_word = Word.new({:word => "WORD"})
+    #   same_word.save()
+    #   expect(Word.all().length).to(eq(1))
+    #   #binding.pry
+    # end
+  end
+
+  describe('.clear') do
+    it("clears the saved array of words") do
+      word = Word.new({:word => "word"})
+      word.save()
+      Word.clear()
+      expect(Word.all().length).to(eq(0))
     end
   end
 
