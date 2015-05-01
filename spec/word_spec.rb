@@ -32,7 +32,6 @@ describe(Word) do
     it("prevents saving an empty string word") do
       Word.clear()
       word = Word.new({:word => " "})
-      binding.pry
       word.save()
       expect(Word.all().length).to(eq(0))
     end

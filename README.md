@@ -1,11 +1,11 @@
-# #
+# Words and Definitions #
 ## Epicodus Week 2 Code Review ##
 
 This application is meant to fulfill the requirements of an assignment through Epicodus code school. For more information on Epicodus, see <http://www.epicodus.com/>.
 
 ### Description ###
 
-[simple app description]
+Maintains a list of words and their definitions
 
 **Assignment:** Epicodus Week 2 Code Review
 
