@@ -11,7 +11,8 @@ Maintains a list of words and their definitions
 
 **<https://www.learnhowtoprogram.com/table-of-contents>**
 
-## Heroku Link: ## (active for homework purposes, will be taken down eventually)
+## Heroku Link: ##
+(active for homework purposes, will be taken down eventually)
 
 https://infinite-headland-5878.herokuapp.com/words
 
