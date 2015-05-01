@@ -19,4 +19,8 @@ class Word
     @definitions.push(definition)
   end
 
+  define_singleton_method(:find) do |search_string|
+    return nil
+  end
+
 end

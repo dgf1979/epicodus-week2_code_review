@@ -27,4 +27,12 @@ describe(Word) do
     end
   end
 
+  describe('.find') do
+    it('class method to find a specific saved wordb y its string representation (case insensitive)') do
+      word = Word.new({:word => "word"})
+      word.save()
+      expect(Word.find("WorD")).to(eq(word))
+    end
+  end
+
 end
