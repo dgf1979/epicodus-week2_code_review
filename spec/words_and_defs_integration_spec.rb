@@ -23,3 +23,20 @@ describe('Word integration', {:type => :feature}) do
   end
 
 end
+
+describe('Definition integration', {:type => :feature}) do
+
+  it('verfies addition of new definitions via form post to displayed list') do
+    #make sure the test word exists
+    visit('/words')
+    fill_in('word', :with => 'insanity')
+    click_button('Add New Word')
+    #follow the link to the definitions
+    click_link('INSANITY')
+    fill_in('definition', :with => 'doing the same thing and expecting different results')
+    click_button('Add Definition')
+    #add the definition to the word via the form
+    expect(page).to have_content('doing the same thing and expecting different results')
+  end
+
+end
