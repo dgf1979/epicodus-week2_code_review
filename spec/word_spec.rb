@@ -27,6 +27,14 @@ describe(Word) do
       expect(Word.all().length).to(eq(1))
       #binding.pry
     end
+
+    it("prevents saving an empty string word") do
+      Word.clear()
+      word = Word.new({:word => "  "})
+      word.save()
+      expect(Word.all().length).to(eq(0))
+    end
+
   end
 
   describe('.clear') do
