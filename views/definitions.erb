@@ -1,0 +1,14 @@
+<div>
+  <form action="/words/<%=@word.is() %>/definitions" method="post">
+    <input type="text" id="definition" name="definition">
+    <button type="submit">Add Definition</button>
+  </form>
+</div>
+<div>
+  <h4>Definitions for '<%= @word.is %>':</h4>
+  <ul>
+    <% @word.definitions.each do |definition| %>
+    <li><%= definition %></li>
+    <% end %>
+  </ul>
+</div>

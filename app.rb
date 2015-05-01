@@ -34,12 +34,15 @@ end
 #form to add a definition
 get('/words/:word/definitions') do
   word = params.fetch('word')
+  @word = Word.find(word)
   erb(:definitions)
 end
 
 #post method for adding a definition
 post('/words/:word/definitions') do
   word = params.fetch('word')
-  definition = params.fetch('definition')
+  @word = Word.find(word)
+  new_definition = params.fetch('definition')
+  @word.add_definition(new_definition)
   erb(:definitions)
 end
