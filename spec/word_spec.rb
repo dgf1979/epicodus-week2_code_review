@@ -18,14 +18,14 @@ describe(Word) do
       expect(Word.all()).to(eq([word]))
     end
 
-    # it("prevents saving a word that already exists in the saved word list (case insensitive)") do
-    #   word = Word.new({:word => "word"})
-    #   word.save()
-    #   same_word = Word.new({:word => "WORD"})
-    #   same_word.save()
-    #   expect(Word.all().length).to(eq(1))
-    #   #binding.pry
-    # end
+    it("prevents saving a word that already exists in the saved word list (case insensitive)") do
+      word = Word.new({:word => "word"})
+      word.save()
+      same_word = Word.new({:word => "WORD"})
+      same_word.save()
+      expect(Word.all().length).to(eq(1))
+      #binding.pry
+    end
   end
 
   describe('.clear') do
