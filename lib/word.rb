@@ -20,6 +20,12 @@ class Word
   end
 
   define_singleton_method(:find) do |search_string|
+    search_string.upcase!()
+    @@words.each do |word|
+      if word.is().upcase() == search_string
+        return word
+      end
+    end
     return nil
   end
 
