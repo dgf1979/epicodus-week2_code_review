@@ -7,7 +7,7 @@ describe(Word) do
 
   describe('#initialize, #is') do
     it("returns the word passed during init") do
-      expect(Word.new({:word => "word"}).is()).to(eq("word"))
+      expect(Word.new({:word => "word"}).is()).to(eq("WORD"))
     end
   end
 
@@ -19,10 +19,11 @@ describe(Word) do
     end
 
     it("prevents saving a word that already exists in the saved word list (case insensitive)") do
+      Word.clear()
       word = Word.new({:word => "word"})
       word.save()
-      same_word = Word.new({:word => "WORD"})
-      same_word.save()
+      same = Word.new({:word => "Word"})
+      same.save()
       expect(Word.all().length).to(eq(1))
       #binding.pry
     end

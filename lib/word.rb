@@ -4,12 +4,14 @@ class Word
   @@words = []
 
   define_method(:initialize) do |attributes|
-      @is = attributes.fetch(:word)
+      @is = attributes.fetch(:word).upcase!()
       @definitions = []
   end
 
   define_method(:save) do
-    @@words.push(self)
+    if Word.find(@is) == nil
+      @@words.push(self)
+    end
   end
 
   define_singleton_method(:all) do
@@ -23,7 +25,7 @@ class Word
   define_singleton_method(:find) do |search_string|
     search_string.upcase!()
     @@words.each do |word|
-      if word.is().upcase() == search_string
+      if word.is() == search_string
         return word
       end
     end
