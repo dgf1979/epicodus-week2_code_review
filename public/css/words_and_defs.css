@@ -1,0 +1,39 @@
+a {
+  text-decoration: none;
+}
+a:link {
+  color: green;
+}
+
+/* visited link */
+a:visited {
+  color: darkgreen;
+}
+
+div.container {
+  font-family: Impact, Charcoal, sans-serif;
+  font-wieght: lighter;
+  display: inline-block;
+  margin: auto;
+  padding: 10px;
+  background-color: silver;
+  border-radius: 25px;
+}
+
+div.container a {
+  font-style: italic;
+}
+
+header h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-size: 0.75em;
+  font-weight: bold;
+
+}

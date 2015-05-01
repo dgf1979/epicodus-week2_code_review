@@ -5,9 +5,10 @@
   </form>
 </div>
 <div>
+  <h4>Words:</h4>
   <ul>
     <% @words.each do |word| %>
-    <li><a href='/words/<%=word.is() %>/definitions'><%=word.is() %></a></li> 
+    <li><a href='/words/<%=word.is() %>/definitions'><%=word.is() %></a></li>
     <% end %>
   </ul>
 </div>
