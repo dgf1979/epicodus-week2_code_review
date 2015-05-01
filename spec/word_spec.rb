@@ -11,7 +11,9 @@ describe(Word) do
 
   describe('#save & #all') do
     it("saves the current word to and internal list, and returns that list") do
-      expect(Word.new({:word => "word"}).all()).to(eq(["word"]))
+      word = Word.new({:word => "word"})
+      word.save()
+      expect(Word.all()).to(eq([word]))
     end
   end
 
