@@ -22,6 +22,15 @@ describe('Word integration', {:type => :feature}) do
     expect(page).to have_content('INSANITY')
   end
 
+  it('clears the app to the original state', {:type => :feature}) do
+    visit('/words')
+    fill_in('word', :with => 'insanity')
+    click_button('Add New Word')
+    expect(page).to have_content('INSANITY')
+    click_link('Reset')
+    expect(page).should_not have_content('INSANITY')
+  end
+
 end
 
 describe('Definition integration', {:type => :feature}) do

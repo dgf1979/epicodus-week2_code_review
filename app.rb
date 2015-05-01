@@ -15,6 +15,12 @@ get('/') do
   redirect to('/words')
 end
 
+#reset/clear app
+get('/reset') do
+  Word.clear()
+  redirect to('/words')
+end
+
 #list all words
 #form feild to add a new word
 get('/words') do
