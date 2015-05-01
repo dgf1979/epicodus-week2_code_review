@@ -4,12 +4,21 @@ class Word
   @@words = []
 
   define_method(:initialize) do |attributes|
-      @is = attributes.fetch(:word).upcase!()
-      @definitions = []
+    if attributes.fetch(:word) == nil
+      @is = ""
+    else
+      if attributes.fetch(:word).strip() == nil
+        @is = attributes.fetch(:word).upcase()
+      else
+        @is = attributes.fetch(:word).upcase().strip()
+      end
+    end
+
+    @definitions = []
   end
 
   define_method(:save) do
-    if @is.strip() != "" && Word.find(@is) == nil
+    if @is != "" && Word.find(@is) == nil
       @@words.push(self)
     end
   end

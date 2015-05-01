@@ -13,6 +13,7 @@ describe(Word) do
 
   describe('#save, .all') do
     it("saves the current word to and internal list, and returns that list") do
+      Word.clear()
       word = Word.new({:word => "word"})
       word.save()
       expect(Word.all()).to(eq([word]))
@@ -30,7 +31,8 @@ describe(Word) do
 
     it("prevents saving an empty string word") do
       Word.clear()
-      word = Word.new({:word => "  "})
+      word = Word.new({:word => " "})
+      binding.pry
       word.save()
       expect(Word.all().length).to(eq(0))
     end
@@ -39,6 +41,7 @@ describe(Word) do
 
   describe('.clear') do
     it("clears the saved array of words") do
+      Word.clear()
       word = Word.new({:word => "word"})
       word.save()
       Word.clear()
@@ -48,6 +51,7 @@ describe(Word) do
 
   describe('#add_definition, #definitions') do
     it('adds a definition object to an array, and returns that array') do
+      Word.clear()
       word = Word.new({:word => "word"})
       defined_as = Definition.new({ :definition => "A thing people say" })
       word.add_definition(defined_as)
@@ -57,6 +61,7 @@ describe(Word) do
 
   describe('.find') do
     it('class method to find a specific saved wordb y its string representation (case insensitive)') do
+      Word.clear()
       word = Word.new({:word => "word"})
       word.save()
       expect(Word.find("WorD")).to(eq(word))
