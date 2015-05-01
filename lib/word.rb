@@ -9,8 +9,7 @@ class Word
   end
 
   define_method(:save) do
-
-    if Word.find(@is) == nil
+    if @is.strip() != "" && Word.find(@is) == nil
       @@words.push(self)
     end
   end
