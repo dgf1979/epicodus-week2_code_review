@@ -14,4 +14,12 @@ class Word
     return @@words
   end
 
+  define_method(:add_definition) do |definition|
+
+  end
+
+  define_method(:definitions) do
+    return []
+  end
+
 end
