@@ -1,0 +1,13 @@
+<div>
+  <form action="/words" method="post">
+    <input type="text" id="word" name="word">
+    <button type="submit">Add New Word</button>
+  </form>
+</div>
+<div>
+  <ul>
+    <% @words.each do |word| %>
+    <li><a href='/words/<%=word.is() %>/definitions'><%=word.is() %></a></li> 
+    <% end %>
+  </ul>
+</div>
